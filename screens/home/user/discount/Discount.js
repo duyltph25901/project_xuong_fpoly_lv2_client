@@ -119,63 +119,61 @@ const Discount = () => {
                         </View>
                     )
                     : (
-                        <TouchableWithoutFeedback onPress={() => setOpen(false)}>
-                            <View style={[StyleTemplate.container]}>
-                                <View style={{ flexDirection: 'row', width: width - 20, marginTop: 12, zIndex: 10 }}>
-                                    <DropDownPicker
-                                        placeholder='Sắp xếp/Lọc'
-                                        open={open}
-                                        value={value}
-                                        items={items}
-                                        setOpen={setOpen}
-                                        setValue={setValue}
-                                        setItems={setItems}
-                                        onSelectItem={handleSelectedItem}
-                                        schema={{
-                                            label: 'title',
-                                            value: 'val'
-                                        }}
-                                        style={{
-                                            width: width - 20,
-                                        }}
-                                    />
-                                </View>
+                        <View style={[StyleTemplate.container]}>
+                            <View style={{ flexDirection: 'row', width: width - 20, marginTop: 12, zIndex: 10 }}>
+                                <DropDownPicker
+                                    placeholder='Sắp xếp/Lọc'
+                                    open={open}
+                                    value={value}
+                                    items={items}
+                                    setOpen={setOpen}
+                                    setValue={setValue}
+                                    setItems={setItems}
+                                    onSelectItem={handleSelectedItem}
+                                    schema={{
+                                        label: 'title',
+                                        value: 'val'
+                                    }}
+                                    style={{
+                                        width: width - 20,
+                                    }}
+                                />
+                            </View>
 
-                                <View style={{ flex: 1, width: width, marginTop: 20, justifyContent: 'center', alignItems: 'center' }}>
-                                    <FlatList data={discounts}
-                                        refreshing={false}
-                                        ref={flatListRef}
-                                        onRefresh={onRefresh}
-                                        keyExtractor={(item, index) => item.id}
-                                        renderItem={({ item, index, separators }) => {
-                                            return (
-                                                <View style={[
-                                                    styles.containerItem]}>
-                                                    <Text style={{ fontSize: 16, fontWeight: '500', color: Color.color_primary }}>{(index + 1)}.</Text>
-                                                    <View style={{ flex: 1, flexDirection: 'column', marginStart: 12 }}>
-                                                        <Text style={{ color: Color.color_primary, fontSize: 18, fontWeight: 'bold', textDecorationLine: 'underline', fontStyle: 'italic', marginBottom: 7 }}>{item.code}</Text>
-                                                        <Text style={{ fontSize: 16, color: 'black', fontWeight: '300', marginBottom: 7 }}>Lượt dùng: <Text style={{ fontWeight: 'bold', color: Color.color_primary }}>{item.times}</Text></Text>
-                                                        <Text style={{ fontSize: 16, fontWeight: '300', color: 'black', marginBottom: 7 }}>Giá trị giảm: <Text style={{ fontWeight: 'bold', color: Color.color_primary }}>{item.value_discount}%</Text></Text>
-                                                        <Text style={{ fontSize: 16, fontWeight: '300', color: 'black' }}>Thời hạn: <Text style={{ fontStyle: 'italic', fontSize: 14, textDecorationLine: 'underline', color: Color.color_primary }}>{item.time_start} - {item.time_end}</Text></Text>
-                                                    </View>
-                                                    <View style={{ flexDirection: 'column' }}>
-                                                        {/* <TouchableOpacity style={{ height: 30, width: 30, marginBottom: 10 }}>
+                            <View style={{ flex: 1, width: width, marginTop: 20, justifyContent: 'center', alignItems: 'center' }}>
+                                <FlatList data={discounts}
+                                    refreshing={false}
+                                    ref={flatListRef}
+                                    onRefresh={onRefresh}
+                                    keyExtractor={(item, index) => item.id}
+                                    renderItem={({ item, index, separators }) => {
+                                        return (
+                                            <View style={[
+                                                styles.containerItem]}>
+                                                <Text style={{ fontSize: 16, fontWeight: '500', color: Color.color_primary }}>{(index + 1)}.</Text>
+                                                <View style={{ flex: 1, flexDirection: 'column', marginStart: 12 }}>
+                                                    <Text style={{ color: Color.color_primary, fontSize: 18, fontWeight: 'bold', textDecorationLine: 'underline', fontStyle: 'italic', marginBottom: 7 }}>{item.code}</Text>
+                                                    <Text style={{ fontSize: 16, color: 'black', fontWeight: '300', marginBottom: 7 }}>Lượt dùng: <Text style={{ fontWeight: 'bold', color: Color.color_primary }}>{item.times}</Text></Text>
+                                                    <Text style={{ fontSize: 16, fontWeight: '300', color: 'black', marginBottom: 7 }}>Giá trị giảm: <Text style={{ fontWeight: 'bold', color: Color.color_primary }}>{item.value_discount}%</Text></Text>
+                                                    <Text style={{ fontSize: 16, fontWeight: '300', color: 'black' }}>Thời hạn: <Text style={{ fontStyle: 'italic', fontSize: 14, textDecorationLine: 'underline', color: Color.color_primary }}>{item.time_start} - {item.time_end}</Text></Text>
+                                                </View>
+                                                <View style={{ flexDirection: 'column' }}>
+                                                    {/* <TouchableOpacity style={{ height: 30, width: 30, marginBottom: 10 }}>
                                                             <Image source={require('../../../../assets/images/icon_edit.png')}
                                                                 style={{ height: 30, width: 30, resizeMode: 'cover' }}
                                                             />
                                                         </TouchableOpacity> */}
-                                                        {/* <TouchableOpacity style={{ height: 30, width: 30, marginBottom: 10 }}>
+                                                    {/* <TouchableOpacity style={{ height: 30, width: 30, marginBottom: 10 }}>
                                                             <Image source={require('../../../../assets/images/icon_trash.png')}
                                                                 style={{ height: 30, width: 30, resizeMode: 'cover' }}
                                                             />
                                                         </TouchableOpacity> */}
-                                                    </View>
                                                 </View>
-                                            )
-                                        }} />
-                                </View>
+                                            </View>
+                                        )
+                                    }} />
                             </View>
-                        </TouchableWithoutFeedback>
+                        </View>
                     )
             }
         </>

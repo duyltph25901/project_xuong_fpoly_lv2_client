@@ -14,8 +14,8 @@ const width = Dimensions.get('window').width
 const LoginBoss = () => {
     const url = `${String.url}${String.action_login_boss}`
     const navigation = useNavigation()
-    const [email, setEmail] = useState('duyltph25901@fpt.edu.vn')
-    const [password, setPassword] = useState('123')
+    const [email, setEmail] = useState('duyltph25901@fpt.vn')
+    const [password, setPassword] = useState('123456')
 
     const handleLogin = async () => {
         if (!email || !password) {
