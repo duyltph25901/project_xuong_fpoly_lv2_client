@@ -130,7 +130,7 @@ const err_url_not_formarted = 'Đường dẫn url không hợp lệ!'
 const err_url_is_not_image = 'Đường dẫn không phải url hình ảnh!'
 
 // http
-const url = 'http://192.168.1.18:8080/api/v1/'
+const url = 'http://192.168.22.155:8080/api/v1/'
 const action_login_admin = 'login_admin'
 const action_login_boss = 'login_boss'
 const action_add_category = 'handle_add_category'
